@@ -1,0 +1,5 @@
+name: 'Enforce Rebase'
+description: 'Enforce rebasing on master before merging'
+runs:
+  using: 'node12'
+  main: 'index.js'
