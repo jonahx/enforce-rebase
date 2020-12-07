@@ -1,5 +1,10 @@
 name: 'Enforce Rebase'
 description: 'Enforce rebasing on master before merging'
+inputs:
+  default-branch:
+    description: 'The branch to enforce rebasing on'
+    requred: true
+    default: 'main'
 runs:
   using: 'node12'
   main: 'index.js'

@@ -2,12 +2,13 @@ const core = require('@actions/core')
 const { exec } = require('child_process')
 
 const run = async () => {
+  const BRANCH = core.getInput('default-branch')
   const failureMsg = 
-    "Pull requests must be rebased on master, and have no merge commits"
+    `Pull requests must be rebased on ${BRANCH}, and have no merge commits`
 
   const shCmd = 
-  `[ -z "$(git log --oneline origin/master...HEAD --merges)" ] &&
-     [ "$(git merge-base origin/master HEAD)" = "$(git rev-parse origin/master)" ]`
+  `[ -z "$(git log --oneline origin/${BRANCH}...HEAD --merges)" ] &&
+     [ "$(git merge-base origin/${BRANCH} HEAD)" = "$(git rev-parse origin/${BRANCH})" ]`
 
   try {
     const cmd = exec(shCmd, (error, stdout, stderr) => {
