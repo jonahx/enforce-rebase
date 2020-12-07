@@ -42,8 +42,25 @@ jobs:
       with:
         fetch-depth: 0
     - name: Is Rebased on master?
-      uses: jonahx/enforce-rebase@v1
+      uses: telday/enforce-rebase@1
 ```
+
+## default-branch
+
+You can also specify the name of the branch which you want to enforce rebase on
+by using the `default-branch` parameter. By default this will force rebase onto
+`main`
+
+e.g. For specifying `master` as the default branch.
+
+```yaml
+
+- name: Is Rebased on master?
+  uses: telday/enforce-rebase@1
+  with:
+    default-branch: master
+```
+
 
 ## How is this different from the "Require Linear History" status check?
 
