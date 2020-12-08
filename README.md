@@ -24,7 +24,7 @@ It will fail any pushed PR branches if:
 ## Example use
 
 Here's an example `action.yml` file.  Note that you must explicitly include
-the `actions/checkout@v2` step as well as the `enforce-rebase@v1` step:
+the `actions/checkout@v2` step as well as the `enforce-rebase@v2` step:
 
 ```yaml
 name: Enforce Rebasing
@@ -42,23 +42,23 @@ jobs:
       with:
         fetch-depth: 0
     - name: Is Rebased on master?
-      uses: telday/enforce-rebase@1
+      uses: telday/enforce-rebase@v2
 ```
 
 ## default-branch
 
 You can also specify the name of the branch which you want to enforce rebase on
 by using the `default-branch` parameter. By default this will force rebase onto
-`main`
+`master`
 
-e.g. For specifying `master` as the default branch.
+e.g. For specifying `main` as the default branch.
 
 ```yaml
 
 - name: Is Rebased on master?
-  uses: telday/enforce-rebase@1
+  uses: telday/enforce-rebase@v2
   with:
-    default-branch: master
+    default-branch: main
 ```
 
 

@@ -4,7 +4,7 @@ inputs:
   default-branch:
     description: 'The branch to enforce rebasing on'
     requred: true
-    default: 'main'
+    default: 'master'
 runs:
   using: 'node12'
   main: 'index.js'
