@@ -42,7 +42,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Is Rebased on master?
-      uses: telday/enforce-rebase@v2
+      uses: cyberark/enforce-rebase@v2
 ```
 
 ## default-branch
@@ -56,7 +56,7 @@ e.g. For specifying `main` as the default branch.
 ```yaml
 
 - name: Is Rebased on master?
-  uses: telday/enforce-rebase@v2
+  uses: cyberark/enforce-rebase@v2
   with:
     default-branch: main
 ```
