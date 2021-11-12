@@ -5,9 +5,10 @@ const run = async () => {
   const failureMsg = 
     "Pull requests must be rebased on master, and have no merge commits"
 
+  const mainBranchKey = process.env["PRINCIPAL_BRANCH_NAME"] || "main"
   const shCmd = 
-  `[ -z "$(git log --oneline origin/master...HEAD --merges)" ] &&
-     [ "$(git merge-base origin/master HEAD)" = "$(git rev-parse origin/master)" ]`
+  `[ -z "$(git log --oneline origin/${mainBranchKey}...HEAD --merges)" ] &&
+     [ "$(git merge-base origin/${mainBranchKey} HEAD)" = "$(git rev-parse origin/${mainBranchKey})" ]`
 
   try {
     const cmd = exec(shCmd, (error, stdout, stderr) => {
