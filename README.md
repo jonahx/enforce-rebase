@@ -1,3 +1,7 @@
+# NOT MAINTAINED
+
+Please use https://github.com/cyberark/enforce-rebase instead.
+
 # "Enforce Rebase" Github Action
 
 This action enforces clean, "single-bump" git history that looks like this:
